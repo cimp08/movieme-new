@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -7,13 +7,34 @@ const Navbar = () => {
       <div className='max-w-4xl mx-auto py-5'>
         <ul className='flex justify-between font-medium md:text-lg mx-6'>
           <li>
-            <Link to='/movies'>Movies</Link>
+            <NavLink
+              to='/movies'
+              style={({ isActive }) => ({
+                color: isActive ? '#a855f7' : '',
+              })}
+            >
+              Movies
+            </NavLink>
           </li>
           <li>
-            <Link to='/tv'>Tv-Shows</Link>
+            <NavLink
+              to='/tv'
+              style={({ isActive }) => ({
+                color: isActive ? '#a855f7' : '',
+              })}
+            >
+              Tv-Shows
+            </NavLink>
           </li>
           <li>
-            <Link to='/actors'>Actors</Link>
+            <NavLink
+              to='/actors'
+              style={({ isActive }) => ({
+                color: isActive ? '#a855f7' : '',
+              })}
+            >
+              Actors
+            </NavLink>
           </li>
         </ul>
       </div>
