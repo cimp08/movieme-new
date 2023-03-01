@@ -1,21 +1,30 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import Movies from './components/movie/Movies';
 import Tv from './components/tv/Tv';
 import Actors from './components/actors/Actors';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/movies' element={<Movies />} />
-          <Route path='/tv' element={<Tv />} />
-          <Route path='/actors' element={<Actors />} />
-        </Routes>
-      </Router>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Navigate to='/movies' />} />
+            <Route path='/movies' element={<Navigate to='/movies/popular' />} />
+            <Route path='/movies/:section' element={<Movies />} />
+            <Route path='/tv' element={<Tv />} />
+            <Route path='/actors' element={<Actors />} />
+          </Routes>
+          <Footer />
+        </Router>
     </div>
   );
 }
