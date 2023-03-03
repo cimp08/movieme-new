@@ -78,7 +78,7 @@ const GenresList = () => {
             selectedGenres.includes(genre.id)
               ? 'bg-purple-500 border-purple-500 text-white'
               : 'bg-white border-gray-400 text-gray-400'
-          } px-3 py-1 border hover:bg-purple-500 hover:text-white hover:border-purple-500 rounded-full`}
+          } px-3 py-1 border md:hover:bg-purple-500 md:hover:text-white md:hover:border-purple-500 rounded-full`}
         >
           {genre.name}
         </button>
