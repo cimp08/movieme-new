@@ -6,6 +6,33 @@ body {
   @apply text-gray-600
 }
 
+/* 
+-------------------------------
+SLIDER SHOW
+-------------------------------
+*/
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: fill;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff !important;
+  font-size: 20px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+}
 
 /* 
 -------------------------------

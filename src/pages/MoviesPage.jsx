@@ -1,7 +1,7 @@
-import Slider from '../components/movie/Slider';
-import DiscoverList from '../components/movie/DiscoverList';
-import GenresList from '../components/movie/GenresList';
-import Movies from '../components/movie/Movies';
+import Slider from '../components/movies/Slider';
+import DiscoverList from '../components/movies/DiscoverList';
+import GenresList from '../components/movies/GenresList';
+import Movies from '../components/movies/Movies';
 
 const MoviesPage = () => {
   return (

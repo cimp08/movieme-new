@@ -23,9 +23,7 @@ const Slider = () => {
   },[])
 
 
-  return (
-    <SlideShow media={media} />
-  );
+  return <SlideShow media={media} />;
 };
 
 export default Slider;
