@@ -1,6 +1,15 @@
+import moment from 'moment';
+
+// Constants for the base URLs to access the movie posters and backdrops from
 export const BASE_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
 export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
+// Constants to represent the current date, the date for the next month, and the date for the previous month in "YYYY-MM-DD" format
+export const TODAY = moment().format('YYYY-MM-DD');
+export const NEXTMONTH = moment().add(1, 'M').format('YYYY-MM-DD');
+export const PREVMONTH = moment().subtract(1, 'M').format('YYYY-MM-DD');
+
+// An array of objects representing the movie genres supported by "themoviedb.org" API
 export const MovieGenres = [
   {
     id: 28,
