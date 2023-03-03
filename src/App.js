@@ -6,7 +6,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Movies from './components/movie/Movies';
+import MoviesPage from './pages/MoviesPage';
 import Tv from './components/tv/Tv';
 import Actors from './components/actors/Actors';
 import Footer from './components/Footer';
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Navigate to='/movies' />} />
             <Route path='/movies' element={<Navigate to='/movies/popular' />} />
-            <Route path='/movies/:section' element={<Movies />} />
+            <Route path='/movies/:section' element={<MoviesPage />} />
             <Route path='/tv' element={<Tv />} />
             <Route path='/actors' element={<Actors />} />
           </Routes>
