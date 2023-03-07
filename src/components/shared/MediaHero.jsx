@@ -13,23 +13,23 @@ const MediaHero = ({
 }) => {
   return (
     <div
-      className='min-h-[60vh] bg-cover bg-center fade-in flex'
+      className='min-h-[50vh] bg-cover bg-center fade-in flex'
       style={{
         backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(${
           BASE_BACKDROP_URL + backdrop
         })`,
       }}
     >
-      <div className='max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6 my-10'>
+      <div className='max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 my-10'>
         <div className='mx-4'>
           <img
             src={BASE_BACKDROP_URL + poster}
             alt={title}
-            className='w-full'
+            className='w-full md:w-[370px]'
           />
         </div>
 
-        <div className='text-white mx-4 md:mx-0'>
+        <div className='text-white mx-4 md:mx-0 flex flex-col justify-center'>
           <h2 className='text-2xl md:text-4xl'>
             {title}{' '}
             <span className='text-base md:text-lg text-gray-400'>
@@ -53,7 +53,7 @@ const MediaHero = ({
               <span className='bg-yellow-400 text-black text-xs rounded py-[2px] px-1 font-bold '>
                 IMDb
               </span>
-              <p className='ml-1 text-sm text-gray-400'>by {votes} voters</p>
+              <p className='ml-1 text-base'>by {votes} voters</p>
             </div>
           ) : (
             <div className='flex items-center gap-1 mb-6'>
