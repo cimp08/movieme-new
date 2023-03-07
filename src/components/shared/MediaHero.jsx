@@ -1,5 +1,5 @@
 import { AiFillStar } from 'react-icons/ai';
-import { BASE_BACKDROP_URL } from '../../utils/Constans';
+import { BASE_BACKDROP_URL, DEFAULT_POSTER } from '../../utils/Constans';
 
 const MediaHero = ({
   backdrop,
@@ -23,7 +23,7 @@ const MediaHero = ({
       <div className='max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 my-10'>
         <div className='mx-4'>
           <img
-            src={BASE_BACKDROP_URL + poster}
+            src={poster ? BASE_BACKDROP_URL + poster : DEFAULT_POSTER }
             alt={title}
             className='w-full md:w-[370px]'
           />
