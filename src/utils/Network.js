@@ -8,8 +8,12 @@ export const sliderHelper = {
 };
 
 // fetching a list of movie genres.
+// fetching a movie or tv based on type details
 export const mediaHelper = {
   genreUrl: `${baseUrl}/genre/movie/list?api_key=${API}&language=en-US`,
+  mediaUrl: (type, id) => {
+    return `${baseUrl}/${type}/${id}?api_key=${API}&language=en-US`;
+  }
 };
 
 // The popularUrl function returns a URL string for popular movies.
