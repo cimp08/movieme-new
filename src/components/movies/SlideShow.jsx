@@ -45,7 +45,7 @@ const SlideShow = ({ media }) => {
                 })`,
               }}
             >
-              <Link to='/'>
+              <Link to={`/movies/details/${slide?.id}`}>
                 <h2 className='text-center text-xl md:text-3xl font-normal mb-2 md:mb-4'>
                   {slide?.title}
                 </h2>
