@@ -22,7 +22,7 @@ const DiscoverList = () => {
 
   return (
     <div className='container mx-auto'>
-      <TitleBorder />
+      <TitleBorder title="Discover" />
       <ul className='flex flex-row md:flex-col flex-wrap justify-center items-center gap-3'>
         {linksArr.map((link) => (
           <li key={link.url}>
