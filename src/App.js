@@ -10,6 +10,7 @@ import MoviesPage from './pages/MoviesPage';
 import Tv from './components/tv/Tv';
 import Actors from './components/actors/Actors';
 import Footer from './components/Footer';
+import MoviePage from './pages/MoviePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Navigate to='/movies' />} />
             <Route path='/movies' element={<Navigate to='/movies/popular' />} />
             <Route path='/movies/:section' element={<MoviesPage />} />
+            <Route path='/movies/details/:id' element={<MoviePage />} />
             <Route path='/tv' element={<Tv />} />
             <Route path='/actors' element={<Actors />} />
           </Routes>
