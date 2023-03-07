@@ -4,6 +4,9 @@ import moment from 'moment';
 export const BASE_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
 export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
+// Constants for the base URLs to access the cast photo
+export const BASE_CAST_URL = 'https://image.tmdb.org/t/p/w185';
+
 // Constants to represent the current date, the date for the next month, and the date for the previous month in "YYYY-MM-DD" format
 export const TODAY = moment().format('YYYY-MM-DD');
 export const NEXTMONTH = moment().add(1, 'M').format('YYYY-MM-DD');
