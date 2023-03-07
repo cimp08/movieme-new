@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Cast from '../components/shared/Cast';
 import Loader from '../components/shared/Loader';
 import MediaHero from '../components/shared/MediaHero';
 import QuestionMark from '../components/shared/QuestionMark';
@@ -30,7 +31,6 @@ const MoviePage = ({ type }) => {
     getItem();
   }, []);
 
-  console.log(item);
   return (
     <>
       {isLoading && (
@@ -38,7 +38,11 @@ const MoviePage = ({ type }) => {
           <Loader />{' '}
         </div>
       )}
-      {error && <QuestionMark />}
+      {error && (
+        <div className='h-[60vh] flex justify-center items-center'>
+          <QuestionMark />
+        </div>
+      )}
       {!isLoading && item.id && (
         <div>
           <MediaHero
@@ -51,6 +55,7 @@ const MoviePage = ({ type }) => {
             rating={item.vote_average}
             votes={item.vote_count}
           />
+          <Cast type={type} />
         </div>
       )}
     </>
