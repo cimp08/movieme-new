@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { BASE_POSTER_URL, MovieGenres } from '../../utils/Constans';
+import {
+  BASE_POSTER_URL,
+  DEFAULT_POSTER,
+  MovieGenres,
+} from '../../utils/Constans';
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +26,11 @@ const MovieCard = ({ movie }) => {
       <div
         className='relative z-[1] w-[170px] h-[260px] md:w-[225px] md:h-[320px] cursor-pointer rounded-lg overflow-hidden before:content-none before:absolute before:z-[-1] before:top-0 before:bottom-0 before:left-0 before:right-0 bg-cover bg-no-repeat'
         style={{
-          backgroundImage: `url(${BASE_POSTER_URL + movie.poster_path})`,
+          backgroundImage: `url(${
+            movie?.poster_path
+              ? BASE_POSTER_URL + movie?.poster_path
+              : DEFAULT_POSTER
+          })`,
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
