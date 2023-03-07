@@ -4,6 +4,14 @@ import moment from 'moment';
 export const BASE_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
 export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
+// No poster
+export const DEFAULT_POSTER = '/assets/images/no-poster.webp';
+
+// No actor
+export const DEFAULT_USER_FEMALE = '/assets/images/user-female.png';
+export const DEFAULT_USER_MALE = '/assets/images/user-male.png';
+export const DEFAULT_USER_NO_GENDER = '/assets/images/user-no-gender.png';
+
 // Constants for the base URLs to access the cast photo
 export const BASE_CAST_URL = 'https://image.tmdb.org/t/p/w185';
 
