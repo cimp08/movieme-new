@@ -14,19 +14,24 @@ import MoviePage from './pages/MoviePage';
 
 function App() {
   return (
-    <div>
-        <Router>
-          <Navbar />
+    <div className='flex flex-col min-h-screen'>
+      <Router>
+        <Navbar />
+        <div className='grow'>
           <Routes>
             <Route path='/' element={<Navigate to='/movies' />} />
             <Route path='/movies' element={<Navigate to='/movies/popular' />} />
             <Route path='/movies/:section' element={<MoviesPage />} />
-            <Route path='/movies/details/:id' element={<MoviePage type="movie" />} />
+            <Route
+              path='/movies/details/:id'
+              element={<MoviePage type='movie' />}
+            />
             <Route path='/tv' element={<Tv />} />
             <Route path='/actors' element={<Actors />} />
           </Routes>
-          <Footer />
-        </Router>
+        </div>
+        <Footer />
+      </Router>
     </div>
   );
 }
