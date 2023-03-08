@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  @apply text-gray-600
+  @apply text-gray-600 dark:text-white bg-white dark:bg-black
 }
+
 
 /* 
 -------------------------------
@@ -47,9 +53,6 @@ MOVIE CARD
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
   height: 100vh;
 }
-
-/* MOVIE CARD END  */
-
 
 /* 
 -------------------------------
