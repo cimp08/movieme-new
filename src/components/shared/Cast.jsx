@@ -41,7 +41,7 @@ const Cast = ({ type }) => {
       {error && <QuestionMark />}
 
       {!isLoading && casts.length > 0 && (
-        <div className='max-w-4xl mx-auto mb-6 fade-in'>
+        <div className='max-w-6xl mx-auto mb-6 fade-in'>
           <TitleBorder title='Top Cast' />
           <div className='grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-3 mx-4'>
             {casts?.map((cast) => (
