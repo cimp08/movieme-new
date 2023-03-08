@@ -35,7 +35,7 @@ const DiscoverList = () => {
                 backgroundColor: isActive ? '#a855f7' : '',
                 color: isActive ? '#fff' : '',
               })}
-              className='block px-4 py-3 bg-white hover:bg-purple-500 text-gray-400 hover:text-white rounded-full'
+              className='block px-4 py-3 md:hover:bg-purple-500 text-gray-400 hover:text-white rounded-full'
             >
               {link.title}
             </NavLink>
