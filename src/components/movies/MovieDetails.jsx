@@ -8,15 +8,15 @@ const MovieDetails = ({ item }) => {
     <div className='max-w-6xl mx-auto mb-6 fade-in'>
       <TitleBorder title='Movie Details' />
       <div className='flex flex-col lg:flex-row gap-5 mx-4'>
-        <div className=''>
+        <div className='flex-1'>
           <img
             src={BASE_BACKDROP_URL + item.backdrop_path}
             alt={item.title}
             className='rounded'
           />
         </div>
-        <div className=''>
-          <h3 className='text-xl'>
+        <div className='flex-1'>
+          <h3 className='text-xl lg:text-2xl'>
             {item.title}{' '}
             <span className='text-base text-gray-500'>
               ({item.release_date.slice(0, 4)})
@@ -28,7 +28,7 @@ const MovieDetails = ({ item }) => {
                 Rating: {item.vote_average.toString().slice(0, 3)}
               </button>
             </div>
-            <div className='flex flex-wrap gap-2'>
+            <div className='flex flex-wrap gap-2 justify-center'>
               {item.genres.map((genre) => (
                 <button
                   key={genre.id}
@@ -40,7 +40,7 @@ const MovieDetails = ({ item }) => {
             </div>
           </div>
           <h4 className='font-semibold mt-6 mb-4'>Overview</h4>
-          <p className='text-base text-gray-500'>{item.overview}</p>
+          <p className='text-sm lg:text-base leading-relaxed text-gray-500'>{item.overview}</p>
         </div>
       </div>
     </div>
