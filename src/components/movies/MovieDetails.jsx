@@ -8,14 +8,14 @@ const MovieDetails = ({ item }) => {
     <div className='max-w-6xl mx-auto mb-6 fade-in'>
       <TitleBorder title='Movie Details' />
       <div className='flex flex-col lg:flex-row gap-5 mx-4'>
-        <div className='flex-1'>
+        <div className='flex-grow'>
           <img
             src={BASE_BACKDROP_URL + item.backdrop_path}
             alt={item.title}
             className='rounded'
           />
         </div>
-        <div className='flex-1'>
+        <div className='flex-none lg:w-[450px]'>
           <h3 className='text-xl lg:text-2xl'>
             {item.title}{' '}
             <span className='text-base text-gray-500'>
