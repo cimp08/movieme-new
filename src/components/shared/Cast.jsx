@@ -45,7 +45,7 @@ const Cast = ({ type }) => {
           <TitleBorder title='Top Cast' />
           <div className='grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-3 mx-4'>
             {casts?.map((cast) => (
-              <CastCard cast={cast} />
+              <CastCard key={cast.id} cast={cast} />
             ))}
           </div>
         </div>

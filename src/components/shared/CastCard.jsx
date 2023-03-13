@@ -26,7 +26,6 @@ const CastCard = ({ cast }) => {
     }
   }, [cast?.gender]);
 
-  console.log(cast);
   return (
     <div className='group flex flex-col items-center cursor-pointer'>
       <img

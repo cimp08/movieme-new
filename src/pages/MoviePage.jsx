@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import MovieDetails from '../components/movies/MovieDetails';
 import Cast from '../components/shared/Cast';
 import Loader from '../components/shared/Loader';
 import MediaHero from '../components/shared/MediaHero';
@@ -57,6 +58,7 @@ const MoviePage = ({ type }) => {
             votes={item.vote_count}
           />
           <Cast type={type} />
+          <MovieDetails item={item} />
         </div>
       )}
     </>
