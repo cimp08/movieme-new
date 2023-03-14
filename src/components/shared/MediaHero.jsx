@@ -47,7 +47,7 @@ const MediaHero = ({
             <div className='flex items-center gap-1 mb-6'>
               <AiFillStar className='text-yellow-300 text-lg' />
               <p className=''>
-                {rating}
+                {rating.toString().slice(0, 3)}
                 <span className='text-sm text-gray-400'> /10 </span>
               </p>
               <span className='bg-yellow-400 text-black text-xs rounded py-[2px] px-1 font-bold '>
