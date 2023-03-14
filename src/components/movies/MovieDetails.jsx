@@ -39,7 +39,7 @@ const MovieDetails = ({ item }) => {
             </div>
           </div>
           <h4 className='font-semibold mt-6 mb-4'>Overview</h4>
-          <p className='text-sm lg:text-base leading-relaxed text-gray-500'>
+          <p className='text-sm lg:text-base leading-relaxed text-gray-500 dark:text-white'>
             {item.overview}
           </p>
         </div>

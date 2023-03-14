@@ -14,7 +14,7 @@ const MediaListSliderItem = ({
         .map((item) => (
           <div
             key={item.id}
-            className='w-[130px] md:w-[150px] lg:w-[130px]'
+            className='w-[130px] md:w-[150px] lg:w-[130px] fade-in'
           >
             <MediaCard
               media={item}
