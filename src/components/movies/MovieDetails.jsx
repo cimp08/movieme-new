@@ -3,7 +3,6 @@ import { BASE_BACKDROP_URL } from '../../utils/Constans';
 import TitleBorder from '../shared/TitleBorder';
 
 const MovieDetails = ({ item }) => {
-  console.log(item);
   return (
     <div className='max-w-6xl mx-auto mb-6 fade-in'>
       <TitleBorder title='Movie Details' />
@@ -12,7 +11,7 @@ const MovieDetails = ({ item }) => {
           <img
             src={BASE_BACKDROP_URL + item.backdrop_path}
             alt={item.title}
-            className='rounded'
+            className='w-full rounded'
           />
         </div>
         <div className='flex-none lg:w-[450px]'>
@@ -32,7 +31,7 @@ const MovieDetails = ({ item }) => {
               {item.genres.map((genre) => (
                 <button
                   key={genre.id}
-                  className='bg-gray-200 rounded-full px-2 py-1 text-xs'
+                  className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs'
                 >
                   {genre.name}
                 </button>
@@ -40,7 +39,9 @@ const MovieDetails = ({ item }) => {
             </div>
           </div>
           <h4 className='font-semibold mt-6 mb-4'>Overview</h4>
-          <p className='text-sm lg:text-base leading-relaxed text-gray-500'>{item.overview}</p>
+          <p className='text-sm lg:text-base leading-relaxed text-gray-500'>
+            {item.overview}
+          </p>
         </div>
       </div>
     </div>
