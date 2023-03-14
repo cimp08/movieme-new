@@ -6,7 +6,9 @@ import MovieDetails from '../components/movies/MovieDetails';
 import Cast from '../components/shared/Cast';
 import Loader from '../components/shared/Loader';
 import MediaHero from '../components/shared/MediaHero';
+import MediaRec from '../components/shared/MediaRec';
 import QuestionMark from '../components/shared/QuestionMark';
+import Trailer from '../components/shared/Trailer';
 import { mediaHelper } from '../utils/Network';
 
 const MoviePage = ({ type }) => {
@@ -31,7 +33,7 @@ const MoviePage = ({ type }) => {
 
   useEffect(() => {
     getItem();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -59,6 +61,14 @@ const MoviePage = ({ type }) => {
           />
           <Cast type={type} />
           <MovieDetails item={item} />
+          <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-2 md:gap-5 mb-6'>
+            <div className='flex-1 lg:flex-grow'>
+              <MediaRec type="movie" />
+            </div>
+            <div className='flex-1 lg:flex-none lg:w-[450px]'>
+              <Trailer />
+            </div>
+          </div>
         </div>
       )}
     </>
