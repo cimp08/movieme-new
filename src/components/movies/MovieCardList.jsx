@@ -40,9 +40,13 @@ const MovieCardList = ({
   return (
     <>
       {items.length > 0 && (
-        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-10 fade-in'>
+        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-10'>
           {items?.map((item) => (
-            <MovieCard key={item.id} movie={item} />
+            <MovieCard
+              key={item.id}
+              movie={item}
+              className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px]'}
+            />
           ))}
         </div>
       )}
