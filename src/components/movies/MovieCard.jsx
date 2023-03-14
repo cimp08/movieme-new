@@ -7,7 +7,7 @@ import {
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, className}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [genreNames, setGenreNames] = useState([]);
 
@@ -22,9 +22,11 @@ const MovieCard = ({ movie }) => {
   }, [movie]);
 
   return (
-    <Link to={`/movies/details/${movie?.id}`}>
+    <Link
+      to={`/movies/details/${movie?.id}`}
+    >
       <div
-        className='relative z-[1] w-[170px] h-[260px] md:w-[225px] md:h-[320px] cursor-pointer rounded-lg overflow-hidden before:content-none before:absolute before:z-[-1] before:top-0 before:bottom-0 before:left-0 before:right-0 bg-cover bg-no-repeat'
+        className={`relative z-[1] ${className} cursor-pointer rounded-lg overflow-hidden before:content-none before:absolute before:z-[-1] before:top-0 before:bottom-0 before:left-0 before:right-0 bg-cover bg-no-repeat`}
         style={{
           backgroundImage: `url(${
             movie?.poster_path
@@ -40,18 +42,20 @@ const MovieCard = ({ movie }) => {
             isHovered ? 'pt-[100px] md:pt-[20px]' : 'pt-[100px] md:pt-[140px]'
           }`}
         />
-        <div className='card-content pt-[85px] md:pt-[105px] px-[4px] md:px-[12px] text-white text-center'>
+        <div
+          className='card-content pt-[85px] md:pt-[105px] px-[4px] md:px-[12px] text-white text-center'
+        >
           <h2 className={`text-sm truncate font-medium`}>
-            {movie.title.slice(0, 51)}
+            {movie?.title.slice(0, 51)}
           </h2>
           <p className='text-gray-300 text-sm'>
-            {movie.release_date.slice(0, 4)}
+            {movie?.release_date.slice(0, 4)}
           </p>
-          {movie.vote_average > 0 ? (
+          {movie?.vote_average > 0 ? (
             <div className='flex justify-center items-center gap-1 mt-1'>
               <AiFillStar className='text-yellow-300 text-lg' />
               <p className=''>
-                {movie.vote_average}
+                {movie?.vote_average}
                 <span className='text-sm text-gray-300'> /10</span>
               </p>
               <span className='bg-yellow-400 text-black text-xs rounded py-[2px] px-1 font-bold '>
