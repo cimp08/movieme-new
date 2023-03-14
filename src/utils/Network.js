@@ -17,7 +17,13 @@ export const mediaHelper = {
   },
   mediaCastsUrl: (type, id) => {
     return `${baseUrl}/${type}/${id}/credits?api_key=${API}`;
-  }
+  },
+  mediaRecommendationsUrl: function (type, id) {
+    return `${baseUrl}/${type}/${id}/recommendations?api_key=${API}&language=en-US`;
+  },
+  trailerUrl: function (id) {
+    return `${baseUrl}/movie/${id}/videos?api_key=${API}&language=en-US`;
+  },
 };
 
 // The popularUrl function returns a URL string for popular movies.
