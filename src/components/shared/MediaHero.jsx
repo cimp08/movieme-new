@@ -21,7 +21,7 @@ const MediaHero = ({
       }}
     >
       <div className='max-w-6xl mx-auto flex flex-col md:flex-row gap-4 my-10'>
-        <div className='mx-4 flex-none'>
+        <div className='flex-none'>
           <img
             src={poster ? BASE_BACKDROP_URL + poster : DEFAULT_POSTER}
             alt={title}
@@ -29,7 +29,7 @@ const MediaHero = ({
           />
         </div>
 
-        <div className='text-white mx-4 md:mx-0 flex flex-col justify-center grow'>
+        <div className='text-white md:mx-0 flex flex-col justify-center grow'>
           <h2 className='text-2xl md:text-4xl'>
             {title}{' '}
             <span className='text-base md:text-lg text-gray-400'>

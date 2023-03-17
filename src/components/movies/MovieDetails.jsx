@@ -6,7 +6,7 @@ const MovieDetails = ({ item }) => {
   return (
     <div className='max-w-6xl mx-auto mb-6 fade-in'>
       <TitleBorder title='Movie Details' />
-      <div className='flex flex-col lg:flex-row gap-5 mx-4'>
+      <div className='flex flex-col lg:flex-row gap-5'>
         <div className='flex-grow'>
           <img
             src={BASE_BACKDROP_URL + item.backdrop_path}

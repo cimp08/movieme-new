@@ -7,7 +7,7 @@ import {
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie, className}) => {
+const MediaCardRating = ({ movie, className}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [genreNames, setGenreNames] = useState([]);
 
@@ -85,4 +85,4 @@ const MovieCard = ({ movie, className}) => {
   );
 };
 
-export default MovieCard;
+export default MediaCardRating;

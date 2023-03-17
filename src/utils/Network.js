@@ -24,8 +24,8 @@ export const mediaHelper = {
   trailerUrl: function (id) {
     return `${baseUrl}/movie/${id}/videos?api_key=${API}&language=en-US`;
   },
-  mediaSimilarUrl: function (type, id) {
-    return `${baseUrl}/${type}/${id}/similar?api_key=${API}&language=en-US`;
+  mediaSimilarUrl: function (type, id, page) {
+    return `${baseUrl}/${type}/${id}/similar?api_key=${API}&language=en-US&page=${page}`;
   },
 };
 

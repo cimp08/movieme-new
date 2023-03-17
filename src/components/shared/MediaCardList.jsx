@@ -1,17 +1,16 @@
 import { useEffect } from 'react';
-import Loader from '../shared/Loader';
-import QuestionMark from '../shared/QuestionMark';
-import MovieCard from './MovieCard';
+import Loader from './Loader';
+import QuestionMark from './QuestionMark';
+import MovieCard from './MediaCardRating';
 
-const MovieCardList = ({
+const MediaCardList = ({
   items,
   addPage,
   moreAvailable,
   isDownloading,
   setIsDownloading,
+  className
 }) => {
- 
-
   useEffect(() => {
     // Add a scroll event listener to the window
     function handleScroll() {
@@ -40,10 +39,10 @@ const MovieCardList = ({
   return (
     <>
       {items.length > 0 && (
-        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-10'>
-          {items?.map((item) => (
+        <div className={className}>
+          {items?.map((item, index) => (
             <MovieCard
-              key={item.id}
+              key={index}
               movie={item}
               className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px]'}
             />
@@ -66,4 +65,4 @@ const MovieCardList = ({
   );
 };
 
-export default MovieCardList;
+export default MediaCardList;

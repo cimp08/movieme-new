@@ -47,7 +47,7 @@ const Trailer = () => {
       )}
       {trailer && !error && !isLoading ? (
         <div className='flex flex-col'>
-          <div className='aspect-w-16 aspect-h-9 mx-4 lg:mx-0'>
+          <div className='aspect-w-16 aspect-h-9 lg:mx-0'>
             <iframe
               title={trailer.key}
               className='embed-responsive-item rounded-lg'
@@ -55,7 +55,7 @@ const Trailer = () => {
               src={`https://www.youtube.com/embed/${trailer.key}`}
             />
           </div>
-          <div className='flex justify-between mt-3 mx-4 lg:mx-0'>
+          <div className='flex justify-between mt-3 lg:mx-0'>
             <div className='flex gap-2'>
               <span className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs'>
                 {trailer.size > 720 ? 'Full HD' : 'HD'}

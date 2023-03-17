@@ -8,7 +8,7 @@ const MediaListSliderItem = ({
 
 
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 justify-items-center w-full mx-4 md:mx-0'>
+    <div className='grid grid-cols-2 md:grid-cols-4 justify-items-center w-full'>
       {mediaArr
         .filter((item, index) => index >= startPosition && index <= endPosition)
         .map((item) => (

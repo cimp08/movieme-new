@@ -15,7 +15,7 @@ const MediaSlider = ({ items }) => {
           endPosition={endPosition}
         />
       </div>
-      <div className='flex justify-end mt-2 mx-4'>
+      <div className='flex justify-end mt-2'>
         {startPosition >= 3 && (
           <button
             className=' bg-gray-300 dark:bg-gray-700 font-bold rounded mr-auto'
