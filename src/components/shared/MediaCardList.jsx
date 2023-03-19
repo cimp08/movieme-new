@@ -45,7 +45,7 @@ const MediaCardList = ({
               key={index}
               item={item}
               type={type}
-              className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px]'}
+              className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px] fade-in'}
             />
           ))}
         </div>
