@@ -16,7 +16,6 @@ const DiscoverListTv = () => {
     { url: `/tv/top-rated`, title: 'Top Rated' },
     { url: `/tv/on-the-air`, title: 'On TV' },
     { url: `/tv/airing-today`, title: 'Airing Today' },
- 
   ];
 
   return (
@@ -33,7 +32,7 @@ const DiscoverListTv = () => {
                 backgroundColor: isActive ? '#a855f7' : '',
                 color: isActive ? '#fff' : '',
               })}
-              className='block px-4 py-3 md:hover:bg-purple-500 text-gray-400 hover:text-white rounded-full'
+              className='block px-3 py-2 md:px-4 md:py-3 md:hover:bg-purple-500 text-sm md:text-base text-gray-400 hover:text-white rounded-full'
             >
               {link.title}
             </NavLink>

@@ -65,13 +65,13 @@ const TvHero = ({ item }) => {
             <div>
               <h4 className='text-xl mb-3'>Seasons</h4>
               <div className='w-[80px] h-[80px] border rounded-full flex justify-center items-center'>
-                <span className='text-5xl'>{item?.number_of_seasons}</span>
+                <span className='text-4xl'>{item?.number_of_seasons}</span>
               </div>
             </div>
             <div>
               <h4 className='text-xl mb-3'>Episodes</h4>
               <div className='w-[80px] h-[80px] border rounded-full flex justify-center items-center'>
-                <span className='text-5xl'>{item?.number_of_episodes}</span>
+                <span className='text-4xl'>{item?.number_of_episodes}</span>
               </div>
             </div>
           </div>

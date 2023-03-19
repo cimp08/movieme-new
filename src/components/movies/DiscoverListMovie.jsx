@@ -22,7 +22,7 @@ const DiscoverListMovie = () => {
 
   return (
     <div className='container mx-auto'>
-      <TitleBorder title="Discover" />
+      <TitleBorder title='Discover' />
       <ul className='flex flex-row md:flex-col flex-wrap justify-center items-center gap-3'>
         {linksArr.map((link) => (
           <li key={link.url}>
@@ -35,7 +35,7 @@ const DiscoverListMovie = () => {
                 backgroundColor: isActive ? '#a855f7' : '',
                 color: isActive ? '#fff' : '',
               })}
-              className='block px-4 py-3 md:hover:bg-purple-500 text-gray-400 hover:text-white rounded-full'
+              className='block px-3 py-2 md:px-4 md:py-3 text-sm md:text-base md:hover:bg-purple-500 text-gray-400 hover:text-white rounded-full'
             >
               {link.title}
             </NavLink>
