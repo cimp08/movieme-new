@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import Loader from './Loader';
 import QuestionMark from './QuestionMark';
-import MovieCard from './MediaCardRating';
+import MediaCardRating from './MediaCardRating';
 
 const MediaCardList = ({
   items,
+  type,
   addPage,
   moreAvailable,
   isDownloading,
@@ -26,7 +27,6 @@ const MediaCardList = ({
         !isDownloading && // Avoid multiple fetch calls
         moreAvailable // Check if more data is available to fetch
       ) {
-        console.log('bottom of the page');
         setIsDownloading(true); // Set loading state to true
         addPage(); // Fetch new data
       }
@@ -41,9 +41,10 @@ const MediaCardList = ({
       {items.length > 0 && (
         <div className={className}>
           {items?.map((item, index) => (
-            <MovieCard
+            <MediaCardRating
               key={index}
-              movie={item}
+              item={item}
+              type={type}
               className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px]'}
             />
           ))}

@@ -4,9 +4,8 @@ const MediaListSliderItem = ({
   mediaArr,
   startPosition,
   endPosition,
+  type,
 }) => {
-
-
   return (
     <div className='grid grid-cols-2 md:grid-cols-4 justify-items-center w-full'>
       {mediaArr
@@ -18,7 +17,10 @@ const MediaListSliderItem = ({
           >
             <MediaCard
               media={item}
-              className={'w-[130px] h-[195px] md:w-[150px] md:h-[225px] lg:w-[130px] lg:h-[195px]'}
+              type={type}
+              className={
+                'w-[130px] h-[195px] md:w-[150px] md:h-[225px] lg:w-[130px] lg:h-[195px]'
+              }
               hidden={true}
             />
           </div>

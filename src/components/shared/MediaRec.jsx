@@ -35,7 +35,11 @@ const MediaRec = ({ type }) => {
 
   return (
     <div>
-      <TitleBorder title='Recommended Movies' />
+      <TitleBorder
+        title={
+          type === 'movies' ? 'Recommended Movies' : 'Recommended TV-Shows'
+        }
+      />
       {isLoading && !items && (
         <div className='flex flex-col items-center mt-20'>
           <Loader />
@@ -48,9 +52,7 @@ const MediaRec = ({ type }) => {
       )}
       {items.length > 0 && !error && !isLoading ? (
         <>
-          <MediaSlider
-            items={items}
-          />
+          <MediaSlider items={items} type={type} />
         </>
       ) : (
         <div className='flex flex-col items-center my-20'>

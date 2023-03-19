@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import MediaListSliderItem from './MediaListSliderItem';
 
-const MediaSlider = ({ items }) => {
+const MediaSlider = ({ items, type }) => {
   const [startPosition, setStartPosition] = useState(0);
   const [endPosition, setEndPosition] = useState(3);
 
@@ -13,6 +13,7 @@ const MediaSlider = ({ items }) => {
           mediaArr={items}
           startPosition={startPosition}
           endPosition={endPosition}
+          type={type}
         />
       </div>
       <div className='flex justify-end mt-2'>
