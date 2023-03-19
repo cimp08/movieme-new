@@ -43,7 +43,7 @@ const Cast = ({ type }) => {
       {!isLoading && casts.length > 0 && (
         <div className='fade-in'>
           <TitleBorder title='Top Cast' />
-          <div className='grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 justify-items-center'>
+          <div className='grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-y-3 justify-items-center'>
             {casts?.map((cast) => (
               <CastCard key={cast.id} cast={cast} />
             ))}
