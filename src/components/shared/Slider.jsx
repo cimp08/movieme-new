@@ -29,7 +29,6 @@ const Slider = ({ type }) => {
     getMedia();
   }, []);
 
-
   return (
     <>
       {isLoading && !media && (
