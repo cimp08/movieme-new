@@ -17,13 +17,12 @@ const FetchMoreMedia = ({ type, fetchUrl }) => {
     setPage(1);
     setItems([]);
     setMoreAvailable(false);
-    getMovies(fetchUrl);
+    getMedia(fetchUrl);
   }, []);
 
   // This function retrieves movies from the API using the URL returned by the getUrlToFetch function.
-  const getMovies = async () => {
+  const getMedia = async () => {
     const updatedFetchUrl = `${fetchUrl}&page=${page}`;
-    console.log(updatedFetchUrl);
     const response = await axios.get(updatedFetchUrl);
     const responsePage = response.data.page;
 
@@ -42,20 +41,23 @@ const FetchMoreMedia = ({ type, fetchUrl }) => {
   // Call the getMovies function to retrieve the next page of movies from the API.
   const addPage = () => {
     setPage((prevPage) => prevPage + 1);
-    getMovies();
+    getMedia();
   };
 
   return (
     <div className=''>
       <MediaCardList
         items={items}
+        type={type}
         addPage={addPage}
         moreAvailable={moreAvailable}
         isDownloading={isDownloading}
         setIsDownloading={setIsDownloading}
-        className={
-          'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center w-full gap-8 my-10'
-        }
+        className={`${
+          type === 'movie'
+            ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center w-full gap-8 my-10'
+            : 'grid grid-cols-2 md:grid-cols-3 justify-items-center w-full gap-8 my-10'
+        }`}
       />
     </div>
   );
