@@ -4,8 +4,12 @@ export const baseUrl = 'https://api.themoviedb.org/3';
 export const baseDiscoverMovieUrl = `${baseUrl}/discover/movie?api_key=${API}&language=en-US&region=US&sort_by=`;
 
 export const sliderHelper = {
-  sliderMovieUrl: `${baseUrl}/movie/popular?api_key=${API}&language=en-US`,
+  sliderUrl: (type) => {
+    return `${baseUrl}/discover/${type}/?api_key=${API}&language=en-US&sort_by=popularity.desc&primary_release_date.gte=${PREVMONTH}&primary_release_date.lte=${TODAY}&with_original_language=en`;
+  },
 };
+
+
 
 // fetching a list of movie genres.
 // fetching a movie or tv based on type details
@@ -26,6 +30,9 @@ export const mediaHelper = {
   },
   mediaSimilarUrl: function (type, id, page) {
     return `${baseUrl}/${type}/${id}/similar?api_key=${API}&language=en-US&page=${page}`;
+  },
+  keywordsUrl: function (type, id) {
+    return `${baseUrl}/${type}/${id}/keywords?api_key=${API}&language=en-US`;
   },
 };
 
