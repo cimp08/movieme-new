@@ -85,6 +85,7 @@ const Movies = () => {
     <div className='flex flex-col justify-center items-center'>
       <MediaCardList
         items={items}
+        type="movie"
         addPage={addPage}
         moreAvailable={moreAvailable}
         isDownloading={isDownloading}
