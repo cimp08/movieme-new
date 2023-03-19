@@ -63,3 +63,10 @@ export const movieHelper = {
     return `${baseDiscoverMovieUrl}vote_average.desc&include_adult=false&include_video=false&page=${page}&vote_count.gte=5000&with_genres=${genres}`;
   },
 };
+
+export const tvHelper = {
+  sectionTvUrl: function (section, page ) {
+    const updatedSection = section.replace(/-/g, '_');
+    return `${baseUrl}/tv/${updatedSection}?api_key=${API}&language=en-US&page=${page}`;
+  },
+};
