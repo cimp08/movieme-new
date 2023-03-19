@@ -62,7 +62,9 @@ const MoviePage = ({ type }) => {
             votes={item.vote_count}
           />
           <div className='mx-4'>
-            <Cast type={type} />
+            <div className='max-w-6xl mx-auto mb-6'>
+              <Cast type={type} />
+            </div>
             <MovieDetails item={item} />
             <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-2 md:gap-5 mb-6'>
               <div className='flex-1 lg:flex-grow'>
