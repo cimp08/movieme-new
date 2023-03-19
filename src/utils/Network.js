@@ -5,7 +5,7 @@ export const baseDiscoverMovieUrl = `${baseUrl}/discover/movie?api_key=${API}&la
 
 export const sliderHelper = {
   sliderUrl: (type) => {
-    return `${baseUrl}/discover/${type}/?api_key=${API}&language=en-US&sort_by=popularity.desc&primary_release_date.gte=${PREVMONTH}&primary_release_date.lte=${TODAY}&with_original_language=en`;
+    return `https://api.themoviedb.org/3/discover/${type}/?api_key=${API}&language=en-US&sort_by=popularity.desc&primary_release_date.gte=${PREVMONTH}&primary_release_date.lte=${TODAY}&with_original_language=en`;
   },
 };
 
