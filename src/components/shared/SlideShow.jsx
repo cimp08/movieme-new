@@ -56,7 +56,7 @@ const SlideShow = ({ media, type }) => {
               }}
             >
               <Link to={`/${type === "movie" ? "movies" : "tv"}/details/${slide?.id}`}>
-                <h2 className='text-center text-xl md:text-3xl font-normal mb-2 md:mb-4'>
+                <h2 className='text-center text-lg md:text-3xl font-normal mb-2 md:mb-4 mx-12'>
                   {type === "movie" ? slide?.title : slide?.name}
                 </h2>
               </Link>
@@ -72,7 +72,7 @@ const SlideShow = ({ media, type }) => {
                   ))}
                 </ul>
               </ul>
-              <div className='flex justify-center items-center gap-2 mb-6 md:mb-12'>
+              <div className='flex justify-center items-center gap-2 mb-2 md:mb-12'>
                 <AiFillStar className='text-yellow-300 text-xl' />
                 <p className='text-sm md:text-lg text-center'>
                   {slide?.vote_average}
