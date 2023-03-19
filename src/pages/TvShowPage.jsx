@@ -59,7 +59,7 @@ const TvShowPage = ({ type }) => {
         <>
           <TvHero item={item} />
           <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-10'>
-            <div className='flex-grow'>
+            <div className='flex-grow mx-4'>
               <Cast type='tv' />
               <SeasonDetails item={item} />
               <MediaRec type='tv' />
@@ -70,7 +70,9 @@ const TvShowPage = ({ type }) => {
               />
             </div>
             <div className='w-full lg:w-[230px] order-first lg:order-last'>
-              <TvFacts tvShow={item} keywords={keywords} />
+              <div className='mx-4'>
+                <TvFacts tvShow={item} keywords={keywords} />
+              </div>
             </div>
           </div>
         </>

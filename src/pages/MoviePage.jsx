@@ -6,7 +6,7 @@ import MovieDetails from '../components/movies/MovieDetails';
 import Cast from '../components/shared/Cast';
 import FetchMoreMedia from '../components/shared/FetchMoreMedia';
 import Loader from '../components/shared/Loader';
-import MediaHero from '../components/shared/MediaHero';
+import MovieHero from '../components/movies/MovieHero';
 import MediaRec from '../components/shared/MediaRec';
 import QuestionMark from '../components/shared/QuestionMark';
 import TitleBorder from '../components/shared/TitleBorder';
@@ -51,7 +51,7 @@ const MoviePage = ({ type }) => {
       )}
       {!isLoading && item.id && (
         <>
-          <MediaHero
+          <MovieHero
             backdrop={item.backdrop_path}
             poster={item.poster_path}
             title={item.title}
