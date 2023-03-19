@@ -14,13 +14,9 @@ const Slider = ({ type }) => {
   const getMedia = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(sliderHelper.sliderUrl(type));
-      if (response.ok) {
-        const data = await response.json();
-        setMedia(data.results);
-      } else {
-        setError(true);
-      }
+      await axios
+        .get(sliderHelper.sliderUrl(type))
+        .then((res) => setMedia(res.data.results));
     } catch (error) {
       console.log(error);
       setError(true);
