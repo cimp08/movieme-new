@@ -7,11 +7,11 @@ import {
   Navigate,
 } from 'react-router-dom';
 import MoviesPage from './pages/MoviesPage';
-import Actors from './components/actors/Actors';
 import Footer from './components/Footer';
 import MoviePage from './pages/MoviePage';
 import TvShowsPage from './pages/TvShowsPage';
 import TvShowPage from './pages/TvShowPage';
+import ActorsPage from './pages/ActorsPage';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
               path='/tv/details/:id'
               element={<TvShowPage type='tv' />}
             />
-            <Route path='/actors' element={<Actors />} />
+            <Route path='/actors' element={<ActorsPage />} />
           </Routes>
         </div>
         <Footer />
