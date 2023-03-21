@@ -70,3 +70,9 @@ export const tvHelper = {
     return `${baseUrl}/tv/${updatedSection}?api_key=${API}&language=en-US&page=${page}`;
   },
 };
+
+export const peopleHelper = {
+  trendingPeopleUrl: function (page) {
+    return `https://api.themoviedb.org/3/trending/person/week?api_key=${API}&language=en-US&page=${page}`;
+  },
+};
