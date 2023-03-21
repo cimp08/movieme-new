@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Loader from './Loader';
 import QuestionMark from './QuestionMark';
 import MediaCardRating from './MediaCardRating';
+import TvCard from '../actors/ActorCard';
 
 const MediaCardList = ({
   items,
@@ -10,7 +11,7 @@ const MediaCardList = ({
   moreAvailable,
   isDownloading,
   setIsDownloading,
-  className
+  className,
 }) => {
   useEffect(() => {
     // Add a scroll event listener to the window
@@ -40,12 +41,14 @@ const MediaCardList = ({
     <>
       {items.length > 0 && (
         <div className={className}>
-          {items?.map((item, index) => (
+          {items.map((item) => (
             <MediaCardRating
-              key={index}
+              key={item.id}
               item={item}
               type={type}
-              className={'w-[170px] h-[260px] md:w-[225px] md:h-[320px] fade-in'}
+              className={
+                'w-[170px] h-[260px] md:w-[225px] md:h-[320px] fade-in'
+              }
             />
           ))}
         </div>
