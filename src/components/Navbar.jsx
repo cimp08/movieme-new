@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import SearchNav from './search/SearchNav';
 import Switcher from './shared/Switcher';
-import {FaSearch} from 'react-icons/fa'
+
 
 const Navbar = () => {
   return (
@@ -45,7 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='mr-2 pb-[2px]'>
-          <FaSearch />
+          <SearchNav />
         </div>
       </div>
     </nav>
