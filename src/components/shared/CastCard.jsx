@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   BASE_CAST_URL,
   DEFAULT_USER_FEMALE,
@@ -27,7 +28,7 @@ const CastCard = ({ cast }) => {
   }, [cast?.gender]);
 
   return (
-    <div className='group flex flex-col items-center cursor-pointer'>
+    <Link to={`/people/${cast?.id}`} className='group flex flex-col items-center cursor-pointer'>
       <img
         src={cast?.profile_path ? BASE_CAST_URL + cast?.profile_path : gender}
         alt={cast?.name}
@@ -39,7 +40,7 @@ const CastCard = ({ cast }) => {
         </h3>
         <h4 className='text-gray-500 text-sm md:text-base'>{cast?.character}</h4>
       </div>
-    </div>
+    </Link>
   );
 };
 

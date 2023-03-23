@@ -4,7 +4,7 @@ import { BASE_POSTER_URL, DEFAULT_POSTER } from '../../utils/Constans';
 
 const ActorCard = ({ actor}) => {
   return (
-    <Link to={`/actor/${actor?.id}`} className='flex flex-col items-center group fade-in'>
+    <Link to={`/people/${actor?.id}`} className='flex flex-col items-center group fade-in'>
       <img
         src={
           actor?.profile_path

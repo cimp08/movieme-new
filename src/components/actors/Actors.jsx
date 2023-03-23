@@ -27,8 +27,6 @@ const Actors = () => {
           ? response.data.results
           : [...prevItems, ...response.data.results]
       );
-      console.log(response.data.total_pages);
-      console.log(responsePage);
       setMoreAvailable(responsePage < response.data.total_pages ? true : false);
     } catch (error) {
       console.log(error);
@@ -63,7 +61,7 @@ const Actors = () => {
           <div className='text-center mt-10 mb-10'>
             <button
               className={`${
-                !moreAvailable || isLoading && 'hidden'
+                !moreAvailable || (isLoading && 'hidden')
               } border border-gray-400 hover:bg-gray-400 hover:text-white duration-300 px-4 p-2 rounded-lg`}
               onClick={addPage}
             >
