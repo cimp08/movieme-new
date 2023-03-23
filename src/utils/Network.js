@@ -75,4 +75,13 @@ export const peopleHelper = {
   trendingPeopleUrl: function (page) {
     return `https://api.themoviedb.org/3/trending/person/week?api_key=${API}&language=en-US&page=${page}`;
   },
+  peopleUrl: function (id) {
+    return `https://api.themoviedb.org/3/person/${id}?api_key=${API}&language=en-US`;
+  },
+  personMovieCredits: function(id) {
+    return `${baseUrl}/person/${id}/movie_credits?api_key=${API}&language=en-US`;
+  },
+  personTvCredits: function(id) {
+    return `${baseUrl}/person/${id}/tv_credits?api_key=${API}&language=en-US`;
+  }
 };
