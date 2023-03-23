@@ -1,14 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 import SearchNav from './search/SearchNav';
 import Switcher from './shared/Switcher';
 
 
 const Navbar = () => {
   return (
-    <nav className='bg-slate-100 dark:bg-gray-900 shadow flex-none'>
-      <div className='flex justify-between md:justify-around items-center py-5'>
-        <div className='ml-2 pb-[2px]'>
+    <nav className='relative h-[60px] bg-slate-100 dark:bg-gray-900 shadow flex-none flex justify-center'>
+      <div className='flex justify-between md:justify-around items-center'>
+        <div className='absolute left-3 md:left-10'>
           <Switcher />
         </div>
         <div>
@@ -45,8 +46,13 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className='mr-2 pb-[2px]'>
+        <div className='hidden lg:flex lg:absolute lg:right-10'>
           <SearchNav />
+        </div>
+        <div className='flex absolute right-3 lg:hidden'>
+          <Link to='/search'>
+            <FaSearch />
+          </Link>
         </div>
       </div>
     </nav>

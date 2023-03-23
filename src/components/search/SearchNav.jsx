@@ -28,13 +28,12 @@ const SearchInputField = ({ inputText, setInputText, setShowSearchInput }) => {
     >
       <div>
         <label
-          for='search'
-          class='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
+          className='text-sm font-medium text-gray-900 sr-only dark:text-white'
         >
           Search
         </label>
-        <div class='relative'>
-          <div class='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+        <div className='relative'>
+          <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
             <FaSearch />
           </div>
           <input
@@ -43,7 +42,7 @@ const SearchInputField = ({ inputText, setInputText, setShowSearchInput }) => {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             id='search'
-            class='search-bar block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500'
+            className='search-bar block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500'
             placeholder='Search...'
             required
           />
