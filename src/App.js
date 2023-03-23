@@ -13,6 +13,7 @@ import TvShowsPage from './pages/TvShowsPage';
 import TvShowPage from './pages/TvShowPage';
 import ActorsPage from './pages/ActorsPage';
 import PeoplePage from './pages/PeoplePage';
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path='/tv/details/:id' element={<TvShowPage type='tv' />} />
             <Route path='/actors' element={<ActorsPage />} />
             <Route path='/people/:id' element={<PeoplePage />} />
+            <Route path='/search' element={<SearchPage />} />
           </Routes>
         </div>
         <Footer />
