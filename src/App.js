@@ -12,6 +12,7 @@ import MoviePage from './pages/MoviePage';
 import TvShowsPage from './pages/TvShowsPage';
 import TvShowPage from './pages/TvShowPage';
 import ActorsPage from './pages/ActorsPage';
+import PeoplePage from './pages/PeoplePage';
 
 function App() {
   return (
@@ -29,11 +30,9 @@ function App() {
             />
             <Route path='/tv' element=<Navigate to='/tv/popular' /> />
             <Route path='/tv/:section' element={<TvShowsPage />} />
-            <Route
-              path='/tv/details/:id'
-              element={<TvShowPage type='tv' />}
-            />
+            <Route path='/tv/details/:id' element={<TvShowPage type='tv' />} />
             <Route path='/actors' element={<ActorsPage />} />
+            <Route path='/people/:id' element={<PeoplePage />} />
           </Routes>
         </div>
         <Footer />
