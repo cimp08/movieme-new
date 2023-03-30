@@ -85,3 +85,9 @@ export const peopleHelper = {
     return `${baseUrl}/person/${id}/tv_credits?api_key=${API}&language=en-US`;
   }
 };
+
+export const searchHelper = {
+  searchUrl: function (query) {
+    return `${baseUrl}/search/multi?api_key=${API}&language=en-US&query=${query}&page=1&include_adult=false`;
+  },
+};
