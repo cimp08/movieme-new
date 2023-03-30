@@ -5,7 +5,10 @@ export const BASE_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
 export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
 // No poster
-export const DEFAULT_POSTER = '/assets/images/no-poster.webp';
+export const DEFAULT_POSTER = '/assets/images/noposter.jpg';
+
+// No poster
+export const DEFAULT_PROFILE = '/assets/images/noprofile.jpg';
 
 // No actor
 export const DEFAULT_USER_FEMALE = '/assets/images/user-female.png';
@@ -182,3 +185,26 @@ export function getGender(person) {
       return '';
   }
 }
+
+export const getKnownFor = (department) => {
+  switch (department) {
+    case 'Acting':
+      return 'Actor';
+    case 'Directing':
+      return 'Director';
+    case 'Art':
+      return 'Art';
+    case 'Costume & Make-Up':
+      return 'Custome & Make-Up';
+    case 'Crew':
+      return 'Crew';
+    case 'Production':
+      return 'Production';
+    case 'Writing':
+      return 'Writer';
+    case 'Camera':
+      return 'Camera Operator';
+    default:
+      return '';
+  }
+};

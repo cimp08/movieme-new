@@ -15,7 +15,7 @@ const MediaCardRating = ({ item, type, className }) => {
   const getGenreNames = (item) => {
     let names;
     if (type === 'movie') {
-      names = item?.genre_ids.map((id) => {
+      names = item?.genre_ids?.map((id) => {
         const genre = MovieGenres.find((genre) => genre.id === id);
         return genre ? genre.name : '';
       });
@@ -59,13 +59,13 @@ const MediaCardRating = ({ item, type, className }) => {
         <div className='card-content pt-[85px] md:pt-[105px] px-[4px] md:px-[12px] text-white text-center'>
           <h2 className={`text-sm truncate font-medium`}>
             {type === 'movie'
-              ? item?.title.slice(0, 51)
-              : item?.name.slice(0, 51)}
+              ? item?.title?.slice(0, 51)
+              : item?.name?.slice(0, 51)}
           </h2>
           <p className='text-gray-300 text-sm'>
             {type === 'movie'
-              ? item?.release_date.slice(0, 4)
-              : item?.first_air_date.slice(0, 4)}
+              ? item?.release_date?.slice(0, 4)
+              : item?.first_air_date?.slice(0, 4)}
           </p>
           {item?.vote_average > 0 ? (
             <div className='flex justify-center items-center gap-1 mt-1'>

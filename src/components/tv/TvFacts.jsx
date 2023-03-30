@@ -4,7 +4,7 @@ import { BASE_BACKDROP_URL } from '../../utils/Constans';
 import TitleBorder from '../shared/TitleBorder';
 
 const TvFacts = ({ tvShow, keywords }) => {
-  console.log(tvShow);
+
   return (
     <div>
       <TitleBorder title='Facts' />

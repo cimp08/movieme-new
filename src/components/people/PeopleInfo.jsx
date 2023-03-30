@@ -5,7 +5,6 @@ import TitleBorder from '../shared/TitleBorder';
 const PeopleInfo = ({ person }) => {
  
 
-  console.log(person)
   return (
     <div>
       <TitleBorder title='Personal Info' />

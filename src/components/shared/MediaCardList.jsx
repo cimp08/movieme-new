@@ -41,9 +41,9 @@ const MediaCardList = ({
     <>
       {items.length > 0 && (
         <div className={className}>
-          {items.map((item) => (
+          {items.map((item, index) => (
             <MediaCardRating
-              key={item.id}
+              key={index}
               item={item}
               type={type}
               className={

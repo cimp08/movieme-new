@@ -67,7 +67,7 @@ export const movieHelper = {
 export const tvHelper = {
   sectionTvUrl: function (section, page ) {
     const updatedSection = section.replace(/-/g, '_');
-    return `${baseUrl}/tv/${updatedSection}?api_key=${API}&language=en-US&page=${page}`;
+    return `${baseUrl}/tv/${updatedSection}?api_key=${API}&language=en-US&page=${page}&with_original_language=en`;
   },
 };
 

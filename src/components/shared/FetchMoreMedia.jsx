@@ -26,6 +26,8 @@ const FetchMoreMedia = ({ type, fetchUrl }) => {
     const response = await axios.get(updatedFetchUrl);
     const responsePage = response.data.page;
 
+    
+
     // If the response page is 1, replace the items state with the new results. Otherwise, add the new results to the existing items state.
     setItems((prevItems) =>
       responsePage === 1

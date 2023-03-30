@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BASE_POSTER_URL, DEFAULT_POSTER } from '../../utils/Constans';
+import { BASE_POSTER_URL, DEFAULT_POSTER, DEFAULT_PROFILE, getGender, getKnownFor } from '../../utils/Constans';
 
 const SearchCard = ({ item }) => {
   const MediaType = (media) => {
@@ -21,7 +21,7 @@ const SearchCard = ({ item }) => {
     return retVal;
   };
 
-  console.log(item);
+  console.log(item)
   return (
     <>
       <div className='relative w-[330px] h-[500px] md:h-auto md:w-[500px] flex flex-col md:flex-row rounded-md bg-gray-200 dark:bg-gray-800 shadow-lg'>
@@ -34,17 +34,17 @@ const SearchCard = ({ item }) => {
                   : DEFAULT_POSTER
               }
               alt='pic'
-              className='w-[110px] h-[200px] md:w-[160px] md:h-[240px] md:rounded-tl-md md:rounded-bl-md'
+              className='w-[140px] h-[200px] md:w-[160px] md:h-[240px] md:rounded-tl-md md:rounded-bl-md'
             />
           ) : (
             <img
               src={
                 item?.profile_path
                   ? BASE_POSTER_URL + item?.profile_path
-                  : DEFAULT_POSTER
+                  : DEFAULT_PROFILE
               }
               alt='pic'
-              className='w-[110px] h-[200px] md:w-[160px] md:h-[240px] md:rounded-tl-md md:rounded-bl-md'
+              className='w-[140px] h-[200px] md:w-[160px] md:h-[240px] md:rounded-tl-md md:rounded-bl-md'
             />
           )}
         </div>
@@ -92,7 +92,7 @@ const SearchCard = ({ item }) => {
                 <h5 className='text-sm font-bold mb-1'>Overview</h5>
                 <p className='text-sm'>
                   {item?.overview
-                    ? `${item?.overview.slice(0, 170)}...`
+                    ? `${item?.overview.slice(0, 160)}...`
                     : 'No overview for this tv show'}
                 </p>
                 <div>
@@ -110,50 +110,35 @@ const SearchCard = ({ item }) => {
             {item?.media_type === 'person' && (
               <div className='text-sm md:text-md px-4 my-2'>
                 <div className='flex justify-between'>
+                  <h4 className='font-bold'>{getGender(item?.gender)}</h4>
                   <h4 className='font-bold'>
-                    {item?.gender === 2 && 'Male'}
-                    {item?.gender === 1 && 'Female'}
-                  </h4>
-                  <h4 className='font-bold'>
-                    {(() => {
-                      switch (item?.known_for_department) {
-                        case 'Acting':
-                          return 'Actor';
-                        case 'Directing':
-                          return 'Director';
-                        case 'Art':
-                          return 'Art';
-                        case 'Costume & Make-Up':
-                          return 'Custome & Make-Up';
-                        case 'Crew':
-                          return 'Crew';
-                        case 'Production':
-                          return 'Production';
-                        case 'Writing':
-                          return 'Writer';
-                        case 'Camera':
-                          return 'Camera Operator';
-                        default:
-                          return '';
-                      }
-                    })()}
+                    {getKnownFor(item?.known_for_department)}
                   </h4>
                 </div>
-                <h5 className='text-sm font-bold mt-4 mb-1'>Known for:</h5>
-                <ul>
-                  {item?.known_for.map((media, index) => (
-                    <li key={media.id} className='text-sm'>
-                      <Link
-                        to={`/${MediaType(media?.media_type)}/details/${
-                          media?.id
-                        }`}
-                        className='text-purple-900 dark:text-purple-400'
-                      >
-                        {media?.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                {item?.known_for?.length > 0 ? (
+                  <>
+                    <h5 className='text-sm font-bold mt-4 mb-1'>Known for:</h5>
+                    <ul>
+                      {item?.known_for.map((media, index) => (
+                        <li key={media.id} className='text-sm'>
+                          <Link
+                            to={`/${MediaType(media?.media_type)}/details/${
+                              media?.id
+                            }`}
+                            className='text-purple-900 dark:text-purple-400'
+                          >
+                            {media?.title ? media?.title : media?.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <h5 className='text-sm text-gray-500 mt-4 mb-1'>
+                    No information
+                  </h5>
+                )}
+
                 <div>
                   <Link
                     to={`/people/${item?.id}`}
