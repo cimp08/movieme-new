@@ -1,8 +1,11 @@
 import React from 'react';
-import { BASE_BACKDROP_URL } from '../../utils/Constans';
+import { BASE_BACKDROP_URL, getGender } from '../../utils/Constans';
 import TitleBorder from '../shared/TitleBorder';
 
 const PeopleInfo = ({ person }) => {
+ 
+
+  console.log(person)
   return (
     <div>
       <TitleBorder title='Personal Info' />
@@ -25,25 +28,21 @@ const PeopleInfo = ({ person }) => {
             <h4 className='text-sm lg:text-base text-black dark:text-white font-bold mb-1'>
               Gender
             </h4>
-            <p className='text-sm'>
-              {person.gender === 2 && 'Male'}
-              {person.gender === 1 && 'Female'}
-              {person.gender === 0 || (person.gender === 3 && 'Unknown')}
-            </p>
+            <p className='text-sm'>{getGender(person?.gender)}</p>
           </div>
 
           <div>
             <h4 className='text-sm lg:text-base text-black dark:text-white font-bold mb-1'>
               Birthday
             </h4>
-            <p className='text-sm'>{person.birthday}</p>
+            <p className='text-sm'>{person.birthday ? person.birthday : 'Unknown'}</p>
           </div>
 
           <div>
             <h4 className='text-sm lg:text-base text-black dark:text-white font-bold mb-1'>
               Place Of Birth
             </h4>
-            <p className='text-sm'>{person.place_of_birth}</p>
+            <p className='text-sm'>{person.place_of_birth ? person.place_of_birth : 'Unknown'}</p>
           </div>
         </div>
       </div>
