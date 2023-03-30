@@ -167,3 +167,18 @@ export const TvGenres = [
     name: 'Western',
   },
 ];
+
+
+export function getGender(person) {
+  switch (person) {
+    case 0:
+    case 3:
+      return 'Unknown';
+    case 1:
+      return 'Female';
+    case 2:
+      return 'Male';
+    default:
+      return '';
+  }
+}
