@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { TbArrowsMoveVertical } from 'react-icons/tb';
 import { AiOutlineCheck } from 'react-icons/ai';
+import { getGenreNameById } from '../../utils/Constans';
 
 
 
@@ -10,11 +11,21 @@ const ListBox = ({ genres, setGenre, selectedGenres, setSelectedGenres }) => {
     console.log(selectedGenres)
 
   return (
-    <div className='w-52 mx-auto'>
-      <Listbox value={selectedGenres.id} onChange={setSelectedGenres.id} multiple>
+    <div className='w-72 mx-auto'>
+      <Listbox
+        value={selectedGenres.id}
+        onChange={setSelectedGenres.id}
+        multiple
+      >
         <div className='relative mt-1 z-10'>
           <Listbox.Button className='relative w-full cursor-default rounded-lg bg-purple-500 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
-            <span className='block truncate text-white'>Choose Genre</span>
+            <span className='block truncate text-white'>
+              {selectedGenres.length > 0
+                ? selectedGenres
+                    .map((genre) => getGenreNameById(genre))
+                    .join(', ')
+                : 'Select Genres'}
+            </span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <TbArrowsMoveVertical
                 className='h-5 w-5 text-white'
@@ -34,7 +45,9 @@ const ListBox = ({ genres, setGenre, selectedGenres, setSelectedGenres }) => {
                   key={personIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'md:bg-purple-400 md:text-white' : 'text-gray-900'
+                      active
+                        ? 'md:bg-purple-400 md:text-white'
+                        : 'text-gray-900'
                     }`
                   }
                   value={genre.name}
@@ -49,7 +62,7 @@ const ListBox = ({ genres, setGenre, selectedGenres, setSelectedGenres }) => {
                       >
                         {genre.name}
                       </span>
-                      {selected ? (
+                      {selectedGenres.includes(genre.id) ? (
                         <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-purple-700'>
                           <AiOutlineCheck
                             className='h-5 w-5'
