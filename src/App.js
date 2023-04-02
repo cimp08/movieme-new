@@ -32,7 +32,7 @@ function App() {
             <Route path='/tv' element=<Navigate to='/tv/popular' /> />
             <Route path='/tv/:section' element={<TvShowsPage />} />
             <Route path='/tv/details/:id' element={<TvShowPage type='tv' />} />
-            <Route path='/actors' element={<ActorsPage />} />
+            <Route path='/people' element={<ActorsPage />} />
             <Route path='/people/:id' element={<PeoplePage />} />
             <Route path='/search' element={<SearchPage />} />
           </Routes>

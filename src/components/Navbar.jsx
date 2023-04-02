@@ -36,12 +36,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to='/actors'
+                to='/people'
                 style={({ isActive }) => ({
                   color: isActive ? '#a855f7' : '',
                 })}
               >
-                Actors
+                People
               </NavLink>
             </li>
           </ul>

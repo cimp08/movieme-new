@@ -1,6 +1,6 @@
 import { AiFillStar } from 'react-icons/ai';
 import { BASE_BACKDROP_URL, DEFAULT_POSTER } from '../../utils/Constans';
-import ModalButton from '../shared/ModalButton';
+import ModalButton from './ModalButton';
 
 const PeopleHero = ({ person }) => {
   return (
@@ -8,7 +8,7 @@ const PeopleHero = ({ person }) => {
       <div
         className='bg-cover bg-center fade-in flex'
         style={{
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/assets/images/people-hero-bg.webp')`,
+          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('/assets/images/people-hero-bg.webp')`,
         }}
       >
         <div className='max-w-6xl mx-auto flex flex-col md:flex-row gap-2 my-10'>
