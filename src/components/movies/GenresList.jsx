@@ -4,6 +4,11 @@ import axios from 'axios';
 import { mediaHelper } from '../../utils/Network';
 import { useNavigate, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
+import { Listbox, Transition } from '@headlessui/react';
+import ListBox from './ListBox';
+
+
+
 
 const GenresList = () => {
   const [genres, setGenres] = useState([]);
@@ -11,6 +16,8 @@ const GenresList = () => {
   const { search } = useLocation();
   const parsedQuery = queryString.parse(search);
   const navigate = useNavigate();
+
+
 
   // Gets all genres
   const getGenres = async () => {
@@ -68,22 +75,34 @@ const GenresList = () => {
     }
   }, [parsedQuery.genre]);
 
+  console.log(genres);
+
   return (
-    <div className='flex flex-wrap gap-2 justify-center'>
-      {genres?.map((genre) => (
-        <button
-          key={genre.id}
-          onClick={() => setGenre(genre.id)}
-          className={`${
-            selectedGenres.includes(genre.id)
-              ? 'bg-purple-500 border-purple-500 text-white'
-              : 'bg-white dark:bg-black border-gray-400 text-gray-400'
-          } text-sm md:text-base px-3 py-1 border md:hover:bg-purple-500 md:hover:text-white md:hover:border-purple-500 rounded-full`}
-        >
-          {genre.name}
-        </button>
-      ))}
-    </div>
+    <>
+      <div className='hidden md:flex flex-wrap gap-2 justify-center'>
+        {genres?.map((genre) => (
+          <button
+            key={genre.id}
+            onClick={() => setGenre(genre.id)}
+            className={`${
+              selectedGenres.includes(genre.id)
+                ? 'bg-purple-500 border-purple-500 text-white'
+                : 'bg-white dark:bg-black border-gray-400 text-gray-400'
+            } text-sm md:text-base px-3 py-1 border md:hover:bg-purple-500 md:hover:text-white md:hover:border-purple-500 rounded-full`}
+          >
+            {genre.name}
+          </button>
+        ))}
+      </div>
+      <div className='md:hidden'>
+        <ListBox
+          genres={genres}
+          setGenre={setGenre}
+          selectedGenres={selectedGenres}
+          setSelectedGenres={setSelectedGenres}
+        />
+      </div>
+    </>
   );
 };
 
