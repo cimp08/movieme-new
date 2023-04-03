@@ -94,10 +94,11 @@ const TvFacts = ({ tvShow, keywords }) => {
                   .map((word) => (
                     <div 
                       key={word.id}
+                      className="block"
                     >
-                      <button className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs cursor-none'>
+                      <p className='inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs cursor-none'>
                         {word.name}
-                      </button>
+                      </p>
                     </div>
                   ))}
               </div>
