@@ -1,21 +1,21 @@
 const Loader = () => {
   return (
-    <div className="flex gap-5">
+    <div className='flex gap-x-14'>
       <div
-        className='w-12 h-12 rounded-full animate-spin
-                    border-y-8 border-solid border-purple-500 border-t-transparent shadow-md'
+        className='w-6 h-6 rounded-full animate-ping
+                     bg-purple-500'
       ></div>
       <div
-        className='w-12 h-12 rounded-full animate-spin
-                    border-y-8 border-solid border-purple-500 border-t-transparent shadow-md'
+        className='w-6 h-6 rounded-full animate-ping
+                     bg-purple-500'
       ></div>
       <div
-        className='w-12 h-12 rounded-full animate-spin
-                    border-y-8 border-solid border-purple-500 border-t-transparent shadow-md'
+        className='w-6 h-6 rounded-full animate-ping
+                     bg-purple-500'
       ></div>
       <div
-        className='w-12 h-12 rounded-full animate-spin
-                    border-y-8 border-solid border-purple-500 border-t-transparent shadow-md'
+        className='w-6 h-6 rounded-full animate-ping
+                     bg-purple-500'
       ></div>
     </div>
   );
