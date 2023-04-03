@@ -38,7 +38,7 @@ const CastCard = ({ cast }) => {
         <h3 className='mt-1 text-sm md:text-base font-bold text-gray-700 dark:text-white'>
           {cast?.name}
         </h3>
-        <h4 className='text-gray-500 text-sm md:text-base'>{cast?.character}</h4>
+        <h4 className='text-gray-500 text-sm md:text-base'>{cast?.character.slice(0, 50)}</h4>
       </div>
     </Link>
   );
