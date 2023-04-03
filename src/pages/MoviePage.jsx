@@ -50,7 +50,7 @@ const MoviePage = ({ type }) => {
         </div>
       )}
       {!isLoading && item.id && (
-        <>
+        <div className='fade-in'>
           <MovieHero
             backdrop={item.backdrop_path}
             poster={item.poster_path}
@@ -83,7 +83,7 @@ const MoviePage = ({ type }) => {
               />
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
