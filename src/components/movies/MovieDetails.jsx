@@ -1,5 +1,5 @@
 import React from 'react';
-import { BASE_BACKDROP_URL } from '../../utils/Constans';
+import { BASE_BACKDROP_URL, DEFAULT_POSTER_LANDSCAPE } from '../../utils/Constans';
 import TitleBorder from '../shared/TitleBorder';
 
 const MovieDetails = ({ item }) => {
@@ -9,7 +9,11 @@ const MovieDetails = ({ item }) => {
       <div className='flex flex-col lg:flex-row gap-5'>
         <div className='flex-grow'>
           <img
-            src={BASE_BACKDROP_URL + item.backdrop_path}
+            src={
+              item.backdrop_path
+                ? BASE_BACKDROP_URL + item.backdrop_path
+                : DEFAULT_POSTER_LANDSCAPE
+            }
             alt={item.title}
             className='w-full rounded'
           />
