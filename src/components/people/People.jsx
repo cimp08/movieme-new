@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react';
 import { peopleHelper } from '../../utils/Network';
 import axios from 'axios';
-import TvCard from './ActorCard';
+import TvCard from './PeopleCard';
 import Loader from '../shared/Loader';
 import QuestionMark from '../shared/QuestionMark';
 
-const Actors = () => {
+const People = () => {
   // Using useState hook to store component state
   const [actors, setActors] = useState([]);
   const [page, setPage] = useState(1);
@@ -85,4 +85,4 @@ const Actors = () => {
   );
 };
 
-export default Actors;
+export default People;

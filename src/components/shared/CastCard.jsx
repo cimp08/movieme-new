@@ -7,7 +7,7 @@ import {
   DEFAULT_USER_NO_GENDER,
 } from '../../utils/Constans';
 
-const CastCard = ({ cast }) => {
+const CastCard = ({ cast, type }) => {
   const [gender, setGender] = useState(null);
 
   useEffect(() => {
@@ -27,8 +27,23 @@ const CastCard = ({ cast }) => {
     }
   }, [cast?.gender]);
 
+  const getType = (type) => {
+    switch (type) {
+      case 'movie':
+        return '?from=movie';
+      case 'tv':
+        return '?from=tv';
+
+      default:
+        return '';
+    }
+  };
+
   return (
-    <Link to={`/people/${cast?.id}`} className='group flex flex-col items-center cursor-pointer'>
+    <Link
+      to={`/people/${cast?.id}${getType(type)}`}
+      className='group flex flex-col items-center cursor-pointer'
+    >
       <img
         src={cast?.profile_path ? BASE_CAST_URL + cast?.profile_path : gender}
         alt={cast?.name}
@@ -38,7 +53,9 @@ const CastCard = ({ cast }) => {
         <h3 className='mt-1 text-sm md:text-base font-bold text-gray-700 dark:text-white'>
           {cast?.name}
         </h3>
-        <h4 className='text-gray-500 text-sm md:text-base'>{cast?.character.slice(0, 50)}</h4>
+        <h4 className='text-gray-500 text-sm md:text-base'>
+          {cast?.character.slice(0, 50)}
+        </h4>
       </div>
     </Link>
   );

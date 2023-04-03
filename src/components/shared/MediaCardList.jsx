@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Loader from './Loader';
 import QuestionMark from './QuestionMark';
 import MediaCardRating from './MediaCardRating';
-import TvCard from '../actors/ActorCard';
 
 const MediaCardList = ({
   items,

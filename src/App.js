@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import MoviePage from './pages/MoviePage';
 import TvShowsPage from './pages/TvShowsPage';
 import TvShowPage from './pages/TvShowPage';
-import ActorsPage from './pages/ActorsPage';
+import PersonPage from './pages/PersonPage';
 import PeoplePage from './pages/PeoplePage';
 import SearchPage from './pages/SearchPage';
 
@@ -32,8 +32,8 @@ function App() {
             <Route path='/tv' element=<Navigate to='/tv/popular' /> />
             <Route path='/tv/:section' element={<TvShowsPage />} />
             <Route path='/tv/details/:id' element={<TvShowPage type='tv' />} />
-            <Route path='/people' element={<ActorsPage />} />
-            <Route path='/people/:id' element={<PeoplePage />} />
+            <Route path='/people' element={<PeoplePage />} />
+            <Route path='/people/:id' element={<PersonPage />} />
             <Route path='/search' element={<SearchPage />} />
           </Routes>
         </div>

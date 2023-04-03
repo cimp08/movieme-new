@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BASE_POSTER_URL, DEFAULT_POSTER } from '../../utils/Constans';
 
-const ActorCard = ({ actor}) => {
+const PeopleCard = ({ actor}) => {
   return (
     <Link to={`/people/${actor?.id}`} className='flex flex-col items-center group fade-in'>
       <img
@@ -19,4 +19,4 @@ const ActorCard = ({ actor}) => {
   );
 };
 
-export default ActorCard;
+export default PeopleCard;
