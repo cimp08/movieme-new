@@ -1,5 +1,4 @@
-import { AiFillStar } from 'react-icons/ai';
-import { BASE_BACKDROP_URL, DEFAULT_POSTER } from '../../utils/Constans';
+import { BASE_BACKDROP_URL, DEFAULT_PROFILE } from '../../utils/Constans';
 import ModalButton from './ModalButton';
 
 const PeopleHero = ({ person }) => {
@@ -17,7 +16,7 @@ const PeopleHero = ({ person }) => {
               src={
                 person?.profile_path
                   ? BASE_BACKDROP_URL + person?.profile_path
-                  : DEFAULT_POSTER
+                  : DEFAULT_PROFILE
               }
               alt={person?.name}
               className='w-full md:w-[360px] rounded'
