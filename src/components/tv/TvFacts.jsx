@@ -92,8 +92,10 @@ const TvFacts = ({ tvShow, keywords }) => {
                 {keywords
                   .sort((a, b) => b.name.length - a.name.length)
                   .map((word) => (
-                    <div key={word.id}>
-                      <button className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs'>
+                    <div 
+                      key={word.id}
+                    >
+                      <button className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs cursor-none'>
                         {word.name}
                       </button>
                     </div>
