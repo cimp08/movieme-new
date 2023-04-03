@@ -7,7 +7,12 @@ const SeasonDetails = ({ item }) => {
   return (
     <div>
       <TitleBorder title='Season Overview' />
-      <div className='flex gap-3 md:gap-6 items-center'>
+      <div
+        className={`flex ${
+          item?.seasons[item?.seasons.length - 1]?.overview.length > 100 &&
+          'flex-col items-start'
+        } md:flex-row gap-3 md:gap-6 md:items-center`}
+      >
         <img
           src={
             item?.seasons[item?.seasons.length - 1]?.poster_path
@@ -24,7 +29,9 @@ const SeasonDetails = ({ item }) => {
             {item?.seasons[item?.seasons.length - 1]?.name}
           </h4>
           <span className='text-sm text-gray-400'>
-            {item?.seasons[item?.seasons.length - 1]?.air_date.slice(0, 4)} |{' '}
+            {item?.seasons[item?.seasons.length - 1]?.air_date &&
+              item?.seasons[item?.seasons.length - 1]?.air_date.slice(0, 4) +
+                ' | '}
             {item?.seasons[item?.seasons.length - 1]?.episode_count} Episodes
           </span>
           <p className='text-sm md:text-base mt-5'>
@@ -33,7 +40,8 @@ const SeasonDetails = ({ item }) => {
               : `${item?.seasons[item?.seasons.length - 1]?.name} of the ${
                   item?.name
                 } premired on ${
-                  item?.seasons[item?.seasons.length - 1]?.air_date
+                  item?.seasons[item?.seasons.length - 1]?.air_date ?
+                  item?.seasons[item?.seasons.length - 1]?.air_date : 'Unknown'
                 }.`}
           </p>
         </div>
