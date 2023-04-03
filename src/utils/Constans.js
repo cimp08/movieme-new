@@ -6,8 +6,9 @@ export const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 
 // No poster
 export const DEFAULT_POSTER = '/assets/images/noposter.jpg';
+export const DEFAULT_POSTER_LANDSCAPE = '/assets/images/noposterlandscape.jpg';
 
-// No poster
+// No profile
 export const DEFAULT_PROFILE = '/assets/images/noprofile.jpg';
 
 // No actor
