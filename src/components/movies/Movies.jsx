@@ -85,12 +85,15 @@ const Movies = () => {
     <div className='flex flex-col justify-center items-center'>
       <MediaCardList
         items={items}
-        type="movie"
+        type='movie'
         addPage={addPage}
         moreAvailable={moreAvailable}
         isDownloading={isDownloading}
         setIsDownloading={setIsDownloading}
-        className={'grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-10'}
+        section={section}
+        className={
+          'grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-10'
+        }
       />
     </div>
   );

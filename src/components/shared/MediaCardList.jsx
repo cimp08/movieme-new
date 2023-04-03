@@ -10,6 +10,7 @@ const MediaCardList = ({
   moreAvailable,
   isDownloading,
   setIsDownloading,
+  section,
   className,
 }) => {
   useEffect(() => {
@@ -45,6 +46,7 @@ const MediaCardList = ({
               key={index}
               item={item}
               type={type}
+              section={section}
               className={
                 'w-[170px] h-[260px] md:w-[225px] md:h-[320px] fade-in'
               }

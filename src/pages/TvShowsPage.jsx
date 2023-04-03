@@ -1,5 +1,4 @@
 import React from 'react';
-import Movies from '../components/movies/Movies';
 import Slider from '../components/shared/Slider';
 import DiscoverListTv from '../components/tv/DiscoverListTv';
 import TvShows from '../components/tv/tvShows';

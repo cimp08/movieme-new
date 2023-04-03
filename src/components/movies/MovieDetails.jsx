@@ -1,8 +1,14 @@
 import React from 'react';
-import { BASE_BACKDROP_URL, DEFAULT_POSTER_LANDSCAPE } from '../../utils/Constans';
+import { Link, useSearchParams } from 'react-router-dom';
+import {
+  BASE_BACKDROP_URL,
+  DEFAULT_POSTER_LANDSCAPE,
+} from '../../utils/Constans';
 import TitleBorder from '../shared/TitleBorder';
 
 const MovieDetails = ({ item }) => {
+  const [searchParams] = useSearchParams();
+
   return (
     <div className='max-w-6xl mx-auto mb-6 fade-in'>
       <TitleBorder title='Movie Details' />
@@ -33,12 +39,13 @@ const MovieDetails = ({ item }) => {
             </div>
             <div className='flex flex-wrap gap-2 justify-center'>
               {item.genres.map((genre) => (
-                <button
+                <Link
+                  to={`/movies/${searchParams.get('from') ? searchParams.get('from') : 'popular'}?genre=${genre.id}`}
                   key={genre.id}
                   className='bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs'
                 >
                   {genre.name}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

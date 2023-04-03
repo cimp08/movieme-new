@@ -8,7 +8,7 @@ import {
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const MediaCardRating = ({ item, type, className }) => {
+const MediaCardRating = ({ item, type, section, className }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [genreNames, setGenreNames] = useState([]);
 
@@ -38,7 +38,11 @@ const MediaCardRating = ({ item, type, className }) => {
   }, [item]);
 
   return (
-    <Link to={`/${type === 'movie' ? 'movies' : 'tv'}/details/${item?.id}`}>
+    <Link
+      to={`/${type === 'movie' ? 'movies' : 'tv'}/details/${item?.id}${
+        section ? `?from=${section}` : ''
+      }`}
+    >
       <div
         className={`relative z-[1] ${className} cursor-pointer rounded-lg overflow-hidden before:content-none before:absolute before:z-[-1] before:top-0 before:bottom-0 before:left-0 before:right-0 bg-cover bg-no-repeat`}
         style={{
