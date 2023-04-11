@@ -6,7 +6,7 @@ const PeopleInfo = ({ person }) => {
  
 
   return (
-    <div>
+    <div className="mb-0 md:mb-12">
       <TitleBorder title='Personal Info' />
       <div className='flex flex-row justify-center lg:justify-start gap-8 items-center  lg:items-start lg:flex-col lg:gap-5'>
         <div className='flex lg:hidden'>

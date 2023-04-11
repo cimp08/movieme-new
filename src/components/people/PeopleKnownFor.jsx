@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { peopleHelper } from '../../utils/Network';
 import MediaCard from '../shared/MediaCard';
-import MyToggle from '../shared/MyToggle';
+import MyToggle from './MyToggle';
 import TitleBorder from '../shared/TitleBorder';
 
 const PeopleKnownFor = () => {
@@ -75,7 +75,7 @@ const PeopleKnownFor = () => {
         <MyToggle enabled={enabled} setEnabled={setEnabled} />
         <span className='text-sm text-gray-500'>Tv-Shows</span>
       </div>
-      {mediaList.length > 0 && (
+      {mediaList.length > 0 ? (
         <div
           className={`grid grid-cols-2 md:grid-cols-4 justify-items-center w-full ${
             mediaList?.length === 12 && 'h-[1059px]'
@@ -92,6 +92,10 @@ const PeopleKnownFor = () => {
               classNameText={'w-[130px] md:w-[150px] lg:w-[184px]'}
             />
           ))}
+        </div>
+      ) : (
+        <div className='h-full flex justify-center items-center'>
+          <h4 className='mb-12 mt-2 lg:my-0 lg:mt-0 text-xl'>No Media ...</h4>
         </div>
       )}
     </div>
