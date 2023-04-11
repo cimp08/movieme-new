@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { mediaHelper } from '../../utils/Network';
-import TitleBorder from './TitleBorder';
-import Loader from './Loader';
-import QuestionMark from './QuestionMark';
+import TitleBorder from '../shared/TitleBorder';
+import Loader from '../shared/Loader';
+import QuestionMark from '../shared/QuestionMark';
 
 const Trailer = () => {
   const [trailer, setTrailer] = useState({});

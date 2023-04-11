@@ -10,7 +10,7 @@ import MovieHero from '../components/movies/MovieHero';
 import MediaRec from '../components/shared/MediaRec';
 import QuestionMark from '../components/shared/QuestionMark';
 import TitleBorder from '../components/shared/TitleBorder';
-import Trailer from '../components/shared/Trailer';
+import Trailer from '../components/movies/Trailer';
 import { mediaHelper } from '../utils/Network';
 
 const MoviePage = ({ type }) => {

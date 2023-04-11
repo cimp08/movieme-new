@@ -69,7 +69,7 @@ const TvShowPage = ({ type }) => {
                 fetchUrl={mediaHelper.mediaSimilarUrl(type, id)}
               />
             </div>
-            <div className='w-full lg:w-[230px] order-first lg:order-last'>
+            <div className='w-full lg:w-[500px] order-first lg:order-last'>
               <div className='mx-4'>
                 <TvFacts tvShow={item} keywords={keywords} />
               </div>
