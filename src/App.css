@@ -12,7 +12,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  @apply text-gray-600 dark:text-white bg-white dark:bg-black
+  @apply text-gray-600 dark:text-white bg-white dark:bg-black;
+  overflow-y: scroll;
 }
 
 
