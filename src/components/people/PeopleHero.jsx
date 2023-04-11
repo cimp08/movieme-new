@@ -5,7 +5,7 @@ const PeopleHero = ({ person }) => {
   return (
     <>
       <div
-        className='bg-cover bg-center fade-in flex'
+        className='bg-cover bg-center flex'
         style={{
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('/assets/images/people-hero-bg.webp')`,
         }}

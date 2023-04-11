@@ -6,7 +6,7 @@ import Movies from '../components/movies/Movies';
 
 const MoviesPage = () => {
   return (
-    <>
+    <div className='fade-in'>
       <Slider type='movie' />
       <div className='flex flex-col md:flex-row gap-6 container mx-auto mt-10'>
         <div className='md:flex-initial md:w-[400px] mx-4'>
@@ -17,7 +17,7 @@ const MoviesPage = () => {
           <Movies />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

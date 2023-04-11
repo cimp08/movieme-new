@@ -5,7 +5,7 @@ import TvShows from '../components/tv/tvShows';
 
 const TvShowsPage = () => {
   return (
-    <>
+    <div className='fade-in'>
       <Slider type='tv' />
       <div className='container mx-auto mt-10'>
           <DiscoverListTv />
@@ -13,7 +13,7 @@ const TvShowsPage = () => {
           <TvShows />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

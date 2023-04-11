@@ -5,7 +5,7 @@ const TvHero = ({ item }) => {
 
   return (
     <div
-      className='bg-cover bg-center fade-in flex'
+      className='bg-cover bg-center flex'
       style={{
         backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(${
           BASE_BACKDROP_URL + item?.backdrop_path

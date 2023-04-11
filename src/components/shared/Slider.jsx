@@ -31,7 +31,7 @@ const Slider = ({ type }) => {
 
   return (
     <>
-      {isLoading && !media && (
+      {isLoading && (
         <div className='flex justify-center items-center h-[35vh] md:h-[70vh] w-full'>
           <Loader />
         </div>

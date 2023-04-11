@@ -56,7 +56,7 @@ const TvShowPage = ({ type }) => {
         </div>
       )}
       {!isLoading && item.id && (
-        <>
+        <div className='fade-in'>
           <TvHero item={item} />
           <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-10'>
             <div className='flex-grow mx-4'>
@@ -75,7 +75,7 @@ const TvShowPage = ({ type }) => {
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );

@@ -48,7 +48,7 @@ const SlideShow = ({ media, type }) => {
         return (
           <SwiperSlide key={slide?.id}>
             <div
-              className='fade-in text-white flex flex-col justify-end items-center h-[35vh] md:h-[70vh] w-full bg-cover bg-top bg-no-repeat'
+              className='text-white flex flex-col justify-end items-center h-[35vh] md:h-[70vh] w-full bg-cover bg-top bg-no-repeat'
               style={{
                 backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${
                   BASE_BACKDROP_URL + slide?.backdrop_path

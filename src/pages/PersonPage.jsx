@@ -47,7 +47,7 @@ const PersonPage = () => {
         </div>
       )}
       {!isLoading && person.id && (
-        <>
+        <div className='fade-in'>
           <PeopleHero person={person} />
           <div className='max-w-6xl mx-auto flex flex-col lg:flex-row gap-10'>
             <div className='w-full lg:w-[230px]'>
@@ -59,7 +59,7 @@ const PersonPage = () => {
               <PeopleKnownFor />
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
