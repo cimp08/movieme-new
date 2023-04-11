@@ -6,16 +6,16 @@ import MediaCard from '../shared/MediaCard';
 import MyToggle from '../shared/MyToggle';
 import TitleBorder from '../shared/TitleBorder';
 
-
 const PeopleKnownFor = () => {
-  
-  const [media, setMedia] = useState([]);
-  const [searchParams] = useSearchParams();
-  const from = searchParams.get('from');
-  const [enabled, setEnabled] = useState(from === "tv" ? true : false);
+  const [movies, setMovies] = useState([]); // State to store movie data
+  const [tvShows, setTvShows] = useState([]); // State to store TV show data
+  const [searchParams] = useSearchParams(); // Hook to get the search params from the URL
+  const from = searchParams.get('from'); // Get the 'from' param from the URL
+  const [enabled, setEnabled] = useState(from === 'tv'); // State to toggle between movies and TV shows based on the 'from' param in the URL
 
-  const { id } = useParams();
+  const { id } = useParams(); // Hook to get the ID parameter from the URL
 
+  // Function to remove duplicates from an array of objects based on the 'id' property
   const removeDuplicates = (array) => {
     const filteredArray = [];
 
@@ -27,31 +27,46 @@ const PeopleKnownFor = () => {
     return filteredArray;
   };
 
-  const getMedia = async () => {
-    setMedia([]);
+  // Function to get the movie and TV show data for the person
+  const getMedia = async (mediaType) => {
     try {
-      const url = enabled
-        ? peopleHelper.personTvCredits(id)
-        : peopleHelper.personMovieCredits(id);
+      const { data } = await axios.get(
+        mediaType === 'movie'
+          ? peopleHelper.personMovieCredits(id)
+          : peopleHelper.personTvCredits(id)
+      );
 
-      const { data } = await axios.get(url);
-
+      // Combine the person's cast and crew credits
       const topCredits = [...data.cast, ...data.crew];
+
+      // Sort the credits based on vote count in descending order
       topCredits.sort((a, b) => b.vote_count - a.vote_count);
 
+      // Remove duplicates based on 'id' property
       const filteredArr = removeDuplicates(topCredits);
 
+      // Keep only the top 12 credits
       filteredArr.splice(12);
 
-      setMedia(filteredArr);
+      // Set the state based on the media type
+      if (mediaType === 'movie') {
+        setMovies(filteredArr);
+      } else {
+        setTvShows(filteredArr);
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Call the getMedia function for both movie and TV show data on component mount
   useEffect(() => {
-    getMedia();
-  }, [enabled]);
+    getMedia('movie');
+    getMedia('tv');
+  }, []);
+
+  // Get the media list based on the enabled state (movies or TV shows)
+  const mediaList = enabled ? tvShows : movies;
 
   return (
     <div>
@@ -60,9 +75,13 @@ const PeopleKnownFor = () => {
         <MyToggle enabled={enabled} setEnabled={setEnabled} />
         <span className='text-sm text-gray-500'>Tv-Shows</span>
       </div>
-      {media.length > 0 && (
-        <div className='grid grid-cols-2 md:grid-cols-4 justify-items-center w-full'>
-          {media?.map((item) => (
+      {mediaList.length > 0 && (
+        <div
+          className={`grid grid-cols-2 md:grid-cols-4 justify-items-center w-full ${
+            mediaList?.length === 12 && 'h-[1059px]'
+          }`}
+        >
+          {mediaList?.map((item) => (
             <MediaCard
               key={item.id}
               media={item}
